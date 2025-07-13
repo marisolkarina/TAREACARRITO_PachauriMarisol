@@ -1,6 +1,38 @@
+const api = "http://localhost:5000";
+import axios from 'axios';
+
 const Producto = (props) => {
 
-    const { productos } = props;
+    const { productos, carritoId } = props;
+
+    const addProductoCarrito = async (prod) => {
+        try {
+            const res = await axios.get(`${api}/carritos/${carritoId}`); //carrito actual
+            const productosActuales = res.data.productos;
+
+            let productoExistente = productosActuales.find(p => p.nombre === prod.nombre);
+            let productosDelCarrito;
+            productoExistente ? (
+                productosDelCarrito = productosActuales.map(p => {
+                    if (p.nombre===prod.nombre) {
+                        return {nombre: p.nombre, cantidad: p.cantidad+1} //si existe producto en carrito solo se modifica la cantidad
+                    }
+                    return p;
+                })
+            ): (
+                productosDelCarrito = [
+                    ...productosActuales, // conj productos que ya tiene el carrito actual
+                    { nombre: prod.nombre, cantidad: 1 } // producto nuevo que se añade al carrito
+                ]
+            )
+
+            await axios.patch(`${api}/carritos/${carritoId}`, {
+                productos: productosDelCarrito
+            });
+        } catch (err) {
+            console.error(`Error al agregar el producto al carrito: ${err}`);
+        }
+    };
 
     return (
         <>
@@ -16,7 +48,10 @@ const Producto = (props) => {
                                 <p className="fs-5 mt-3 lead">S/. {prod.precio}</p>
                             </div>
                             <div className="card-footer">
-                                <button className="btn btn-success w-100">
+                                <button
+                                    className="btn btn-success w-100"
+                                    onClick={() => addProductoCarrito(prod)}
+                                >
                                     Agregar al carrito
                                 </button>
                             </div>
