@@ -79,27 +79,14 @@
         {
           "id": 1,
           "nombre": "Máscara De Pestañas Maybelline Ny Lash Sensational Sky High A Prueba De Agua",
-          "cantidad": 2
+          "precio": 57.52,
+          "cantidad": 1
         },
         {
           "id": 2,
           "nombre": "Tinta De Labios Maybelline Super Stay Teddy Tint Skinnydip 5 Ml",
-          "cantidad": 2
-        },
-        {
-          "id": 6,
-          "nombre": "Delineador Ojos Delineador Ojos 24Ever Ink Liner 01 Essence",
-          "cantidad": 1
-        },
-        {
-          "id": 3,
-          "nombre": "Polvo Pro Setting Powder Banana Yellow Larga Duración 5gr L.A Girl",
-          "cantidad": 1
-        },
-        {
-          "id": 10,
-          "nombre": "Paleta de Sombras de Ojos Playtime x 9 colores L.A Girl",
-          "cantidad": 1
+          "precio": 69.9,
+          "cantidad": 3
         }
       ],
       "id": 1

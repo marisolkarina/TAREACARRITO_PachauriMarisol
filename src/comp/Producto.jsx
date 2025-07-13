@@ -44,7 +44,7 @@ const Producto = (props) => {
             ) : (
                 productosDelCarrito = [
                     ...productosActuales, // conj productos que ya tiene el carrito actual
-                    { id: prod.id, nombre: prod.nombre, cantidad: 1 } // producto nuevo que se añade al carrito
+                    { id: prod.id, nombre: prod.nombre, precio: prod.precio, cantidad: 1 } // producto nuevo que se añade al carrito
                 ]
             )
 
