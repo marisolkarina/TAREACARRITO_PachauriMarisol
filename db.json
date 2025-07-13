@@ -83,10 +83,22 @@
           "cantidad": 1
         },
         {
+          "id": 9,
+          "nombre": "Tónico Facial Revox Zitcare Aha.Bha.Pha. Active Face Toner 250Ml",
+          "precio": 29.9,
+          "cantidad": 1
+        },
+        {
+          "id": 7,
+          "nombre": "Sérum Antimanchas Garnier Express Aclara Vitamina C 30 ml",
+          "precio": 58.32,
+          "cantidad": 1
+        },
+        {
           "id": 2,
           "nombre": "Tinta De Labios Maybelline Super Stay Teddy Tint Skinnydip 5 Ml",
           "precio": 69.9,
-          "cantidad": 3
+          "cantidad": 2
         }
       ],
       "id": 1
