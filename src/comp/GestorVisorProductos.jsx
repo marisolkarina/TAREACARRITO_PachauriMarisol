@@ -46,7 +46,7 @@ const GestorVisorProductos = () => {
         <main>
             <p className='mt-4 text-center fs-2 text-pink fw-medium'>Lista de Productos</p>
             <section className='mt-4 mx-4'>
-                <VisorProductos productos={productos} carritoId={carritoId}/>
+                <VisorProductos productos={productos} carritoId={carritoId} />
             </section>
         </main>
     );

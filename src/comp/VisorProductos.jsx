@@ -5,9 +5,7 @@ const VisorProductos = (props) => {
     const { productos, carritoId } = props;
 
     return (
-        <div className="row">
-            <Producto productos={productos} carritoId={carritoId}/>
-        </div>
+        <Producto productos={productos} carritoId={carritoId}/>
     );
 }
 export default VisorProductos;

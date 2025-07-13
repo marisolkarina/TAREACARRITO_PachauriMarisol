@@ -77,12 +77,20 @@
     {
       "productos": [
         {
+          "nombre": "Máscara De Pestañas Maybelline Ny Lash Sensational Sky High A Prueba De Agua",
+          "cantidad": 4
+        },
+        {
           "nombre": "Tinta De Labios Maybelline Super Stay Teddy Tint Skinnydip 5 Ml",
           "cantidad": 1
         },
         {
-          "nombre": "Rubor En Barra Hidratante Pixi On-The-Glow Blush Ruby 19Gr",
-          "cantidad": 2
+          "nombre": "ESSENCE Gloss Extreme Shine Volume Lipgloss 103 30 g Essence",
+          "cantidad": 1
+        },
+        {
+          "nombre": "Delineador Ojos Delineador Ojos 24Ever Ink Liner 01 Essence",
+          "cantidad": 1
         }
       ],
       "id": 1
