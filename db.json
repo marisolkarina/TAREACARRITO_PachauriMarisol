@@ -75,32 +75,8 @@
   ],
   "carritos": [
     {
-      "productos": [
-        {
-          "id": 1,
-          "nombre": "Máscara De Pestañas Maybelline Ny Lash Sensational Sky High A Prueba De Agua",
-          "precio": 57.52,
-          "cantidad": 1
-        },
-        {
-          "id": 9,
-          "nombre": "Tónico Facial Revox Zitcare Aha.Bha.Pha. Active Face Toner 250Ml",
-          "precio": 29.9,
-          "cantidad": 1
-        },
-        {
-          "id": 7,
-          "nombre": "Sérum Antimanchas Garnier Express Aclara Vitamina C 30 ml",
-          "precio": 58.32,
-          "cantidad": 1
-        },
-        {
-          "id": 2,
-          "nombre": "Tinta De Labios Maybelline Super Stay Teddy Tint Skinnydip 5 Ml",
-          "precio": 69.9,
-          "cantidad": 2
-        }
-      ],
+      "productos": [],
+      "total": 0,
       "id": 1
     }
   ]

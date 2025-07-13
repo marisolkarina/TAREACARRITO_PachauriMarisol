@@ -19,8 +19,8 @@ const Producto = (props) => {
     const iniciarNroItems = async () => {
         try {
             const carrito = await obtenerCarritoActual();
-            const total = carrito.productos.reduce((tot, p) => tot + p.cantidad, 0);
-            setNroItems(total);
+            const totalItems = carrito.productos.reduce((tot, p) => tot + p.cantidad, 0);
+            setNroItems(totalItems);
         } catch (err) {
             console.error(`Error al traer el nroItems: ${err}`);
         }
@@ -48,8 +48,10 @@ const Producto = (props) => {
                 ]
             )
 
+            const totalMonto = productosDelCarrito.reduce((tot, p) => tot + p.precio * p.cantidad, 0);
             await axios.patch(`${api}/carritos/${carritoId}`, {
-                productos: productosDelCarrito
+                productos: productosDelCarrito,
+                total: totalMonto
             });
         } catch (err) {
             console.error(`Error al agregar el producto al carrito: ${err}`);

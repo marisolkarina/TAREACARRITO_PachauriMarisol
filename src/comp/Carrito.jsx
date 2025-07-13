@@ -1,6 +1,26 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+const api = "http://localhost:5000";
+
 const Carrito = (props) => {
 
-    const { productosDelCarrito, eliminarProductoDelCarrito } = props;
+    const { productosDelCarrito, eliminarProductoDelCarrito, carritoId } = props;
+
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        if (carritoId) obtenerTotal();
+    }, [productosDelCarrito]);
+
+    const obtenerTotal = async () => {
+        try {
+            const res = await axios.get(`${api}/carritos/${carritoId}`);
+            setTotal(res.data.total || 0);
+        } catch (err) {
+            console.error(`Error al obtener el total del carrito: ${err}`);
+        }
+    };
 
     return (
         <>
@@ -33,6 +53,14 @@ const Carrito = (props) => {
                     ))
                 }
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colSpan="3"></td>
+                    <td className="fw-medium">Total:</td>
+                    <td className="fw-medium">S/. {total.toFixed(2)}</td>
+                </tr>
+            </tfoot>
+
         </>
     );
 }

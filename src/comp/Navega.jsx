@@ -26,7 +26,8 @@ const Navega = () => {
             localStorage.setItem("carritoId", "temp");
             // Se crea carrito
             const res = await axios.post(`${api}/carritos`, {
-                productos: []
+                productos: [],
+                total: 0
             });
             carritoId = res.data.id;
             localStorage.setItem("carritoId", carritoId);
