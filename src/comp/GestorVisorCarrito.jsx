@@ -25,7 +25,7 @@ const GestorVisorCarrito = (props) => {
 
     const eliminarProductoDelCarrito = async (p) => {
         try {
-            let confirma = window.confirm(`Desea eliminar al usuario ${p.nombre}?`);
+            let confirma = window.confirm(`Desea eliminar el producto ${p.nombre}?`);
             if (confirma) {
                 const res = await axios.get(`${api}/carritos/${carritoId}`);
                 const nuevosProds = res.data.productos.filter(prod => prod.id !== p.id);
