@@ -74,10 +74,5 @@
     }
   ],
   "carritos": [
-    {
-      "productos": [],
-      "total": 0,
-      "id": 1
-    }
   ]
 }
