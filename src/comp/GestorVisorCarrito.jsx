@@ -8,18 +8,18 @@ const api = "http://localhost:5000";
 const GestorVisorCarrito = (props) => {
 
     const { carritoId } = props;
-    const [productosDelCarrito, setProductosDelCarrito] = useState([]);
+    const [carrito, setCarrito] = useState(null);
 
     useEffect(() => {
-        if (carritoId) obtenerProductosDelCarrito();
+        if (carritoId) obtenerCarrito();
     }, [carritoId]);
 
-    const obtenerProductosDelCarrito = async () => {
+    const obtenerCarrito = async () => {
         try {
             const res = await axios.get(`${api}/carritos/${carritoId}`);
-            setProductosDelCarrito(res.data.productos);
+            setCarrito(res.data)
         } catch (err) {
-            console.error(`Error al obtener los productos del carrito: ${err}`);
+            console.error(`Error al obtener carrito: ${err}`);
         }
     };
 
@@ -36,7 +36,7 @@ const GestorVisorCarrito = (props) => {
                     productos: nuevosProds,
                     total: totalMonto
                 });
-                obtenerProductosDelCarrito();
+                obtenerCarrito();
             }
         } catch (err) {
             console.error(`Error al eliminar el producto del carrito ${err}`);
@@ -46,19 +46,16 @@ const GestorVisorCarrito = (props) => {
     return (
         <div>
             {
-                productosDelCarrito.length > 0 ? (
+                carrito && carrito.productos && carrito.productos.length > 0 ? (
                     <>
                         <p className='mt-4 text-center fs-2 text-success fw-medium'>Mi carrito</p>
 
-                        <div className="table-responsive">
-                            <table className="table table-striped table-bordered table-hover text-center mx-auto" style={{ width: '90%' }}>
-                                <Carrito
-                                    productosDelCarrito={productosDelCarrito}
-                                    eliminarProductoDelCarrito={eliminarProductoDelCarrito}
-                                    carritoId={carritoId}
-                                />
-                            </table>
-                        </div>
+                        <Carrito
+                            carrito = {carrito}
+                            eliminarProductoDelCarrito={eliminarProductoDelCarrito}
+                            carritoId={carritoId}
+                        />
+
                     </>
                 ) : (
                     <p className="lead text-danger text-center mt-3">No se han añadido productos al carrito</p>
